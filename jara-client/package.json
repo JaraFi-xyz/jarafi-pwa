@@ -45,7 +45,7 @@
     "recharts": "^2.15.0",
     "stream-browserify": "^3.0.0",
     "viem": "^2.22.12",
-    "wagmi": "^2.14.8"
+    "wagmi": "^2.14.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
