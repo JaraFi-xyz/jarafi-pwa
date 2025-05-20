@@ -18,7 +18,7 @@ const Register = () => {
     try {
       await para.logout();
       const isExistingUser = await para.checkIfUserExists({ email });
-      console.log(isExistingUser);
+      // console.log(isExistingUser);
 
       if (isExistingUser) {
         const webAuthUrlForLogin = await para.initiateUserLogin({ email });

@@ -76,12 +76,12 @@ const Settings = () => {
             color={isActive("/p2p") ? "#0F0140" : "#B0AFB1"}
           />
         </Link> */}
-        {/* <Link to="/card-display">
-               <LuCreditCard
-                 size={25}
-                 color={isActive("/card-display") ? "#0F0140" : "#B0AFB1"}
-               />
-             </Link> */}
+        <Link to="/card-display">
+          <LuCreditCard
+            size={25}
+            color={isActive("/card-display") ? "#0F0140" : "#B0AFB1"}
+          />
+        </Link>
         <Link to="/settings">
           <LuSettings2
             size={25}

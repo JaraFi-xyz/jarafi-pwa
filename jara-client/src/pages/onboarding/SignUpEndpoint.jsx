@@ -84,6 +84,35 @@ const SignUpEndpoint = () => {
         </p>
       </div>
 
+      <div className="flex space-x-4">
+        <button
+          onClick={() => navigate("/main-screen")}
+          className={`border-[1.2px] p-[1.8px] rounded-lg text-md font-medium shadow hover:bg-gray-200 duration-300 ${
+            isActive("/main-screen")
+              ? "bg-white text-[#0F0140]"
+              : "border-[#ffffff] text-[#0F0140]"
+          }`}
+        ></button>
+
+        <button
+          onClick={() => navigate("/trade-with-ease")}
+          className={`border-[1.2px] p-[1.8px] rounded-lg text-md font-medium shadow hover:bg-gray-200 duration-300 ${
+            isActive("/trade-with-ease")
+              ? "bg-white text-[#0F0140]"
+              : "border-[#ffffff] text-[#0f0140]"
+          }`}
+        ></button>
+
+        <button
+          onClick={() => navigate("/sign-up-endpoint")}
+          className={`border-[1.2px] p-[1.8px] rounded-lg text-md font-medium shadow hover:bg-gray-200 duration-300 ${
+            isActive("/sign-up-endpoint")
+              ? "bg-[#0f0140] text-[#0F0140]"
+              : "border-[#ffffff] text-[#0f0140]"
+          }`}
+        ></button>
+      </div>
+
       <motion.div
         className="flex flex-col items-center space-y-2 mb-[3.5rem] "
         variants={buttonVariants}

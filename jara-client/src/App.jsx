@@ -27,6 +27,7 @@ import {
   SelectId,
   PinSetup,
   BankDetails,
+  SeedPhrase,
 } from "./index";
 
 import { AuthRoute, IdleTimeout } from "./component/Registration/AuthRoute";
@@ -151,6 +152,8 @@ function App() {
             </AuthWrapper>
           }
         />
+
+        <Route path="/seed-phrase" element={<SeedPhrase />} />
       </Routes>
     </>
   );

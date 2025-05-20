@@ -3,44 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { ParaModal } from "@getpara/react-sdk";
 import para from "../../constant/paraClient";
 
-const SeedPhrase = () => {
-  const [seedPhrase, setSeedPhrase] = useState(Array(12).fill(""));
-
-  const handleInputChange = (index, value) => {
-    const updatedSeedPhrase = [...seedPhrase];
-    updatedSeedPhrase[index] = value;
-    setSeedPhrase(updatedSeedPhrase);
-  };
-
-  return (
-    <form className="w-full">
-      <p className="text-[16px] text-[#0F0140] ">
-        Kindly enter your seed phrase below
-      </p>
-
-      <div className="grid grid-cols-3 gap-4 w-full my-4">
-        {seedPhrase.map((word, index) => (
-          <input
-            key={index}
-            type="text"
-            value={word}
-            maxLength={15}
-            placeholder={` ${index + 1}`}
-            onChange={(e) => handleInputChange(index, e.target.value)}
-            className="border-[1px] border-[#262526BF] rounded-md px-3 py-2 focus:outline-none focus:border-[#262526BF] text-center"
-          />
-        ))}
-      </div>
-
-      <button className="bg-[#F2E205] rounded-lg p-[10px] text-[16px] font-[Montserrat] font-[600] text-[#4F4E50] w-full text-center ">
-        Login
-      </button>
-    </form>
-  );
-};
 
 const Login = () => {
-  const [loginType, setLoginType] = useState("email");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -88,7 +52,7 @@ const Login = () => {
 
     checkLoginStatus();
   }, [isModalOpen]);
-  
+
   const handleEmailLogin = async (e) => {
     e.preventDefault();
     if (!email) {
@@ -150,33 +114,19 @@ const Login = () => {
         <div className="w-full flex flex-col items-start gap-4">
           <h1 className="text-[24px] font-[700] text-[#0F0140]">Login</h1>
 
-          <div className="border-[1px] border-[#0F0140] p-[5px] rounded-lg flex">
-            <button
+            {/* <button
               type="button"
               onClick={() => setLoginType("email")}
-              className={`p-[7px] px-[10px] rounded-lg text-[12px] ${
+              className={`p-[7px] px-[25px] rounded-lg text-[12px] ${
                 loginType === "email"
                   ? "bg-[#0F0140] text-white"
                   : "text-[#0F0140]"
               }`}
             >
               Email
-            </button>
-            <button
-              disabled={true}
-              type="button"
-              onClick={() => setLoginType("seedPhrase")}
-              className={`p-[7px] rounded-lg text-[12px] ${
-                loginType === "seedPhrase"
-                  ? "bg-[#0F0140] text-white"
-                  : "text-[#0F0140]"
-              } ${true ? "opacity-50 cursor-not-allowed" : ""}`}
-            >
-              Seed Phrase
-            </button>
-          </div>
+            </button> */}
+            
 
-          {loginType === "email" ? (
             <div className="w-full flex flex-col">
               <label>Email</label>
               <input
@@ -234,9 +184,7 @@ const Login = () => {
                 />
               </div>
             </div>
-          ) : (
-            <SeedPhrase />
-          )}
+          
         </div>
       </form>
     </div>

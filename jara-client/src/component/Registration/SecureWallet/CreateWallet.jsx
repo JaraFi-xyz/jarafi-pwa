@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Notice from "./Notice";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CreateWallet = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  const navigate = useNavigate();
   const [email, setEmail] = useState(location.state?.email || "");
 
   // console.log(email);
@@ -22,14 +23,14 @@ const CreateWallet = () => {
       <div className="w-full max-w-md bg-white rounded-3xl p-8 shadow-sm">
         <div className="flex flex-col items-center space-y-6">
           <img
-            src="/chatbot.png"
+            src="/ChatBot.png"
             alt="ChatBot"
             className="w-32 h-32 mb-4 object-contain"
           />
 
           <div className="text-center space-y-6">
             <h2 className="text-gray-900 text-[20px] font-medium">
-              Create wallet and encrypt seed phrase in your Google Drive.
+              Create wallet
             </h2>
 
             <p className="text-[#F21B1B] text-[14px] ">
@@ -46,7 +47,10 @@ const CreateWallet = () => {
               Create wallet
             </button>
 
-            <button className="w-full bg-[#FCFEE8] py-3 px-4 rounded-xl text-gray-900 border-[#F2E205] border-[1.2px] font-medium hover:bg-[#f2e205e7] transition-colors">
+            <button
+              className="w-full bg-[#FCFEE8] py-3 px-4 rounded-xl text-gray-900 border-[#F2E205] border-[1.2px] font-medium hover:bg-[#f2e205e7] transition-colors"
+              onClick={() => navigate("/seed-phrase", { state: { email } })}
+            >
               Have an existing wallet? Recover
             </button>
           </div>
